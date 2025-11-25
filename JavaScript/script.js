@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const rootContainer = document.getElementById('flowsheet-root');
     
-    fetch('/JavaScript/courses.json')
+    fetch('JavaScript/courses.json')
         .then(response => response.json())
         .then(data => {
             generateFlowsheetHTML(data);
