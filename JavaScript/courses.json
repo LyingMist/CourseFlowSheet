@@ -1,0 +1,52 @@
+[
+    {
+        "yearName": "Freshman",
+        "quarters": [
+            {
+                "quarterName": "Fall",
+                "courses": [
+                    { "id": "math4a", "title": "MATH 4A", "subtitle": "Linear Algebra", "prereqs": [] },
+                    { "id": "cs16", "title": "CMPSC 16", "subtitle": "Intro to CS: C++", "prereqs": [] },
+                    { "id": "writ1", "title": "WRIT 1", "subtitle": "Approaches to University Writing ", "prereqs": [] },
+                    { "id": "phil3", "title": "PHIL 3 (GE)", "subtitle": "Critical Thinking", "prereqs": [] }
+                ]
+            },
+            { 
+                "quarterName": "Winter", 
+                "courses": [
+                    { "id": "math6a", "title": "MATH 6A", "subtitle": "Vector Calculus", "prereqs": ["math4a"] },
+                    { "id": "cs24", "title": "CMPSC 24", "subtitle": "Object-Oriented Programming", "prereqs": ["cs16"] },
+                    { "id": "ece5", "title": "ECE 5", "subtitle": "Intro to ECE", "prereqs": [] },
+                    { "id": "ece1a", "title": "ECE 1A", "subtitle": "Computer Engineer Seminar", "prereqs": [] },
+                    { "id": "phys7a", "title": "PHYS 7A", "subtitle": "Physics Mechanics", "prereqs": [""] },
+                    { "id": "writ2", "title": "WRIT 2 (CC)", "subtitle": "Acedamic Writing", "prereqs": ["writ1"] }
+                ] 
+            },
+            { "quarterName": "Spring", "courses": [] }
+        ]
+    },
+    {
+        "yearName": "Sophomore",
+        "quarters": [
+            { "quarterName": "Fall", "courses": [] },
+            { "quarterName": "Winter", "courses": [] },
+            { "quarterName": "Spring", "courses": [] }
+        ]
+    },
+    {
+        "yearName": "Junior",
+        "quarters": [
+            { "quarterName": "Fall", "courses": [] },
+            { "quarterName": "Winter", "courses": [] },
+            { "quarterName": "Spring", "courses": [] }
+        ]
+    },
+    {
+        "yearName": "Senior",
+        "quarters": [
+            { "quarterName": "Fall", "courses": [] },
+            { "quarterName": "Winter", "courses": [] },
+            { "quarterName": "Spring", "courses": [] }
+        ]
+    }
+]

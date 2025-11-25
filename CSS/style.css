@@ -1,0 +1,191 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: #f4f7f6;
+    color: #333;
+    
+    padding: 20px 0; 
+    
+    overflow-x: hidden; 
+    font-size: clamp(14px, 1.2vw, 16px);
+    
+    margin: 0; 
+}
+
+h1 {
+    text-align: center;
+    color: #004a99;
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    padding: 0 20px; 
+}
+
+/* --- New Flowsheet Layout --- */
+
+.flowsheet-container {
+    display: flex;
+    flex-direction: row;
+    border-top: 2px solid #aaa;
+    overflow-x: auto;
+    
+    /* Makes container fill 100% of width */
+    width: 100%; 
+    
+    /* Makes container at least 80% of screen height */
+    min-height: 80vh; 
+    
+    /* Keeps it scrollable on smaller screens */
+    min-width: 1200px; 
+}
+
+.year-group {
+    display: flex;
+    flex-direction: column;
+    border-left: 1px solid #ddd;
+    flex-basis: 0;
+    flex-grow: 1;
+}
+
+.year-group:first-child {
+    border-left: none;
+}
+
+.year-group h2 {
+    text-align: center;
+    background-color: #6c757d;
+    color: white;
+    padding: 8px 0;
+    margin: 0;
+    font-size: clamp(1.1em, 2vw, 1.2em);
+}
+
+.quarters-container {
+    display: flex;
+    flex-direction: row;
+    background-color: #ffffff;
+    flex-grow: 1; 
+}
+
+.quarter-column {
+    flex-basis: 0;
+    flex-grow: 1;
+    min-width: 150px; 
+    padding: 10px;
+    border-right: 1px dotted #ccc;
+}
+
+.quarter-column:last-child {
+    border-right: 1px solid #ddd;
+}
+
+.quarter-column h3 {
+    text-align: center;
+    background-color: #e9ecef;
+    color: #333;
+    padding: 6px 0;
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1em;
+    font-weight: 600;
+}
+
+/* --- Course Block Styling --- */
+.course {
+    background-color: #eef5ff;
+    border: 1px solid #cce0ff;
+    border-radius: 5px;
+    padding: 12px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    
+    /* CRUCIAL for positioning arrows */
+    position: relative; 
+    
+    /* Default state */
+    opacity: 1;
+}
+
+.course strong {
+    display: block;
+    color: #004a99;
+    font-size: clamp(1em, 1.5vw, 1.1em);
+}
+.course small {
+    display: block;
+    color: #555;
+    font-size: clamp(0.8em, 1vw, 0.9em);
+}
+
+/* --- Highlighting Classes (Blue Tier Scheme) --- */
+
+.course.dimmed {
+    opacity: 0.25;
+}
+
+.course.hover-active {
+    opacity: 1;
+    transform: scale(1.03);
+    background-color: #fffae6; /* Soft Gold */
+    border-color: #ffc400; /* Richer Gold */
+    box-shadow: 0 4px 15px rgba(255, 196, 0, 0.6);
+}
+
+/* Prereq (L1) - Lighter Blue */
+.course.prereq-active {
+    opacity: 1;
+    background-color: #cce0ff; /* Lighter Blue */
+    border-color: #0056b3;
+    box-shadow: 0 2px 8px rgba(0, 86, 179, 0.5);
+}
+
+/* Secondary Prereq (L2) - Lightest Blue */
+.course.prereq-secondary-active {
+    opacity: 1;
+    background-color: #eef5ff; /* Lightest Blue */
+    border-color: #b3d1ff;
+}
+
+/* Unlocks - Dark Blue */
+.course.unlocks-active {
+    opacity: 1;
+    background-color: #004a99; /* Dark Blue */
+    border-color: #003366;
+    box-shadow: 0 2px 8px rgba(0, 51, 102, 0.4);
+}
+
+/* Text on dark blue must be white to be readable */
+.course.unlocks-active strong,
+.course.unlocks-active small {
+    color: #ffffff;
+}
+
+/* --- Arrows Inside Highlighted Boxes --- */
+
+/* Base for ALL arrows */
+.course.prereq-active::after,
+.course.prereq-secondary-active::after,
+.course.unlocks-active::after {
+    position: absolute;
+    top: 5px;
+    right: 7px;
+    font-size: 1.2em;
+    font-weight: bold;
+    z-index: 5;
+}
+
+/* Primary Prereq Arrow (L1) ← */
+.course.prereq-active::after {
+    content: '←';
+    color: #0056b3; 
+}
+
+/* Secondary Prereq Arrow (L2) « */
+.course.prereq-secondary-active::after {
+    content: '«';
+    color: #007bff; 
+}
+
+/* Unlocks Arrow → */
+.course.unlocks-active::after {
+    content: '→';
+    color: #ffffff; 
+}
