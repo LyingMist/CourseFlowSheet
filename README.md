@@ -9,5 +9,5 @@ Primary commit with basic features:
 - Using arrows to demonstrate the first level relationship.
 - Able to show the secondary  prereq relationship. 
 
-#### Ver. 1.01.
+#### Ver. 1.01. (2025-12-08)
 Updated my freshman year winter quarter classes. 
