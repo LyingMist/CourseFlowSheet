@@ -8,3 +8,6 @@ Primary commit with basic features:
 - Using 4 tiers of blue colors to show the relationship between each courses (prereq and unlock)
 - Using arrows to demonstrate the first level relationship.
 - Able to show the secondary  prereq relationship. 
+
+#### Ver. 1.01.
+Updated my freshman year winter quarter classes. 
