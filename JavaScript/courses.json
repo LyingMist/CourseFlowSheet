@@ -19,8 +19,7 @@
                     { "id": "ece5", "title": "ECE 5", "subtitle": "Intro to ECE", "prereqs": [] },
                     { "id": "ece1a", "title": "ECE 1A", "subtitle": "Computer Engineer Seminar", "prereqs": [] },
                     { "id": "phys7a", "title": "PHYS 7A", "subtitle": "Physics Mechanics", "prereqs": [""] },
-                    { "id": "writ2", "title": "WRIT 2 (CC)", "subtitle": "Acedamic Writing", "prereqs": ["writ1"] },
-                    { "id": "engl23", "title": "ENGL 23 (GE)", "subtitle": "The Climate Crisis", "prereqs": [] }
+                    { "id": "writ2", "title": "WRIT 2 (CC)", "subtitle": "Acedamic Writing", "prereqs": ["writ1"] }
                 ] 
             },
             { "quarterName": "Spring", "courses": [] }
