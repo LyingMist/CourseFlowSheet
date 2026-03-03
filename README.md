@@ -3,11 +3,11 @@ After scanning through the UCSB gears and other schools' major flow charts. I fi
 
 ## Update Logs: 
 
-#### Ver. 1.00. 
+#### Ver. 1.0.0
 Primary commit with basic features: 
 - Using 4 tiers of blue colors to show the relationship between each courses (prereq and unlock)
 - Using arrows to demonstrate the first level relationship.
 - Able to show the secondary  prereq relationship. 
 
-#### Ver. 1.01. (2025-12-08)
+#### Ver. 1.0.1 (2025-12-08)
 Updated my freshman year winter quarter classes. 
