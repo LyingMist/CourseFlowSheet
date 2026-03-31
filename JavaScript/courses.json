@@ -22,7 +22,14 @@
                     { "id": "writ2", "title": "WRIT 2 (CC)", "subtitle": "Acedamic Writing", "prereqs": ["writ1"] }
                 ] 
             },
-            { "quarterName": "Spring", "courses": [] }
+            {   "quarterName": "Spring", 
+                "courses": [
+                    { "id": "math4b", "title": "MATH 4B", "subtitle": "Differential Equations ", "prereqs": ["math4a"] },
+                    { "id": "ece1b", "title": "ECE 1b", "subtitle": "Computer Engineer Intuition Development", "prereqs": ["ece1a"] },
+                    { "id": "phys7b", "title": "PHYS 7B", "subtitle": "Oscillations and intro to Electromagnetism ", "prereqs": ["phys7a"] },
+                    { "id": "cs24", "title": "CMPSC 40", "subtitle": "Discrete Math", "prereqs": ["cs16","math4a"] },
+                    { "id": "writa2", "title": "ENGLC1001 (CC)", "subtitle": "Acedamic Writing", "prereqs": ["writ2"] }
+                ] }
         ]
     },
     {
