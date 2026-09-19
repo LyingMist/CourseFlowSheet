@@ -88,6 +88,15 @@ h1 {
     margin-bottom: 15px;
     font-size: 1em;
     font-weight: 600;
+    transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.quarter-column:hover > h3,
+.quarter-column:focus > h3,
+.quarter-column:focus-within > h3 {
+    background-color: #52697a;
+    color: #ffffff;
+    box-shadow: 0 2px 8px rgba(82, 105, 122, 0.35);
 }
 
 .quarter-credits {
@@ -116,10 +125,12 @@ h1 {
 }
 
 .quarter-column:hover .quarter-credits,
-.quarter-column:focus .quarter-credits {
+.quarter-column:focus .quarter-credits,
+.quarter-column:focus-within .quarter-credits {
     max-width: 3em;
     margin-left: 4px;
     opacity: 1;
+    color: #ffffff;
     transform: translateX(0);
 }
 
