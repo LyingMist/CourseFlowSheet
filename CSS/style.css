@@ -77,6 +77,9 @@ h1 {
 }
 
 .quarter-column h3 {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
     text-align: center;
     background-color: #e9ecef;
     color: #333;
@@ -85,6 +88,47 @@ h1 {
     margin-bottom: 15px;
     font-size: 1em;
     font-weight: 600;
+}
+
+.quarter-credits {
+    display: inline-block;
+    max-width: 0;
+    overflow: hidden;
+    opacity: 0;
+    color: #0056b3;
+    font-size: 0.8em;
+    font-weight: 600;
+    white-space: nowrap;
+    transform: translateX(-3px);
+    transition: max-width 0.2s ease, margin 0.2s ease, opacity 0.2s ease, transform 0.2s ease;
+}
+
+.course-credits {
+    display: block;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    color: #0056b3;
+    font-size: 0.8em;
+    font-weight: 600;
+    transform: translateY(-3px);
+    transition: max-height 0.2s ease, margin 0.2s ease, opacity 0.2s ease, transform 0.2s ease;
+}
+
+.quarter-column:hover .quarter-credits,
+.quarter-column:focus .quarter-credits {
+    max-width: 3em;
+    margin-left: 4px;
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.course:hover .course-credits,
+.course:focus .course-credits {
+    max-height: 1.5em;
+    margin-top: 4px;
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* --- Course Block Styling --- */
@@ -152,9 +196,18 @@ h1 {
     box-shadow: 0 2px 8px rgba(0, 51, 102, 0.4);
 }
 
+/* Concurrent course - Teal */
+.course.concurrent-active {
+    opacity: 1;
+    background-color: #d9f7f4;
+    border-color: #0f8b8d;
+    box-shadow: 0 2px 8px rgba(15, 139, 141, 0.45);
+}
+
 /* Text on dark blue must be white to be readable */
 .course.unlocks-active strong,
-.course.unlocks-active small {
+.course.unlocks-active small,
+.course.unlocks-active .course-credits {
     color: #ffffff;
 }
 
@@ -163,7 +216,8 @@ h1 {
 /* Base for ALL arrows */
 .course.prereq-active::after,
 .course.prereq-secondary-active::after,
-.course.unlocks-active::after {
+.course.unlocks-active::after,
+.course.concurrent-active::after {
     position: absolute;
     top: 5px;
     right: 7px;
@@ -188,4 +242,10 @@ h1 {
 .course.unlocks-active::after {
     content: '→';
     color: #ffffff; 
+}
+
+/* Concurrent course ↔ */
+.course.concurrent-active::after {
+    content: '↔';
+    color: #0f8b8d;
 }

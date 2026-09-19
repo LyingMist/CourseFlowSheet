@@ -5,38 +5,48 @@
             {
                 "quarterName": "Fall",
                 "courses": [
-                    { "id": "math4a", "title": "MATH 4A", "subtitle": "Linear Algebra", "prereqs": [] },
-                    { "id": "cs16", "title": "CMPSC 16", "subtitle": "Intro to CS: C++", "prereqs": [] },
-                    { "id": "writ1", "title": "WRIT 1", "subtitle": "Approaches to University Writing ", "prereqs": [] },
-                    { "id": "phil3", "title": "PHIL 3 (GE)", "subtitle": "Critical Thinking", "prereqs": [] }
+                    { "id": "math4a", "title": "MATH 4A", "subtitle": "Linear Algebra", "credits": 4, "prereqs": [] },
+                    { "id": "cs16", "title": "CMPSC 16", "subtitle": "Intro to CS: C++", "credits": 4, "prereqs": [] },
+                    { "id": "writ1", "title": "WRIT 1", "subtitle": "Approaches to University Writing ", "credits": 5, "prereqs": [] },
+                    { "id": "phil3", "title": "PHIL 3 (GE)", "subtitle": "Critical Thinking", "credits": 5, "prereqs": [] }
                 ]
             },
             { 
                 "quarterName": "Winter", 
                 "courses": [
-                    { "id": "math6a", "title": "MATH 6A", "subtitle": "Vector Calculus", "prereqs": ["math4a"] },
-                    { "id": "cs24", "title": "CMPSC 24", "subtitle": "Object-Oriented Programming", "prereqs": ["cs16"] },
-                    { "id": "ece5", "title": "ECE 5", "subtitle": "Intro to ECE", "prereqs": [] },
-                    { "id": "ece1a", "title": "ECE 1A", "subtitle": "Computer Engineer Seminar", "prereqs": [] },
-                    { "id": "phys7a", "title": "PHYS 7A", "subtitle": "Physics Mechanics", "prereqs": [""] },
-                    { "id": "writ2", "title": "WRIT 2 (CC)", "subtitle": "Acedamic Writing", "prereqs": ["writ1"] }
+                    { "id": "math6a", "title": "MATH 6A", "subtitle": "Vector Calculus", "credits": 4, "prereqs": ["math4a"] },
+                    { "id": "cs24", "title": "CMPSC 24", "subtitle": "Object-Oriented Programming", "credits": 4, "prereqs": ["cs16"] },
+                    { "id": "ece5", "title": "ECE 5", "subtitle": "Intro to ECE", "credits": 4, "prereqs": [] },
+                    { "id": "ece1a", "title": "ECE 1A", "subtitle": "Computer Engineer Seminar", "credits": 1, "prereqs": [] },
+                    { "id": "phys7a", "title": "PHYS 7A", "subtitle": "Physics Mechanics", "credits": 4, "prereqs": [""] },
+                    { "id": "writ2", "title": "WRIT 2 (CC)", "subtitle": "Acedamic Writing", "credits": 5, "prereqs": ["writ1"] }
                 ] 
             },
             {   "quarterName": "Spring", 
                 "courses": [
-                    { "id": "math4b", "title": "MATH 4B", "subtitle": "Differential Equations ", "prereqs": ["math4a"] },
-                    { "id": "cs32", "title": "CMPSC 32", "subtitle": "Object-Oriented Design and OS system", "prereqs": ["cs24"] },
-                    { "id": "cs40", "title": "CMPSC 40", "subtitle": "Discrete Math", "prereqs": ["cs16","math4a"] },
-                    { "id": "ece1b", "title": "ECE 1b", "subtitle": "Computer Engineer Intuition Development", "prereqs": ["ece1a"] },
-                    { "id": "phys7b", "title": "PHYS 7B", "subtitle": "Oscillations and intro to Electromagnetism ", "prereqs": ["phys7a"] },
-                    { "id": "writa2", "title": "ENGLC1001 (CC)", "subtitle": "Acedamic Writing", "prereqs": ["writ2"] }
+                    { "id": "math4b", "title": "MATH 4B", "subtitle": "Differential Equations ", "credits": 4, "prereqs": ["math4a"] },
+                    { "id": "cs32", "title": "CMPSC 32", "subtitle": "Object-Oriented Design and OS system", "credits": 4, "prereqs": ["cs24"] },
+                    { "id": "cs40", "title": "CMPSC 40", "subtitle": "Discrete Math", "credits": 5, "prereqs": ["cs16","math4a"] },
+                    { "id": "ece1b", "title": "ECE 1b", "subtitle": "Computer Engineer Intuition Development", "credits": 1, "prereqs": ["ece1a"] },
+                    { "id": "phys7b", "title": "PHYS 7B", "subtitle": "Oscillations and intro to Electricity ", "credits": 4, "prereqs": ["phys7a"] },
+                    { "id": "englc1001", "title": "ENGLC1001 (CC)", "subtitle": "Acedamic Writing", "credits": 5, "prereqs": ["writ2"] }
                 ] }
         ]
     },
     {
         "yearName": "Sophomore",
         "quarters": [
-            { "quarterName": "Fall", "courses": [] },
+            {
+                "quarterName": "Fall",
+                "courses": [
+                    { "id": "ece10a", "title": "ECE 10A", "subtitle": "Foundations of Circuits & Systems", "credits": 3, "prereqs": ["math4b", "phys7b"], "concurrent": ["ece10al"] },
+                    { "id": "ece10al", "title": "ECE 10AL", "subtitle": "Foundations of Circuits Lab", "credits": 2, "prereqs": [], "concurrent": ["ece10a"] },
+                    { "id": "ece15a", "title": "ECE 15A", "subtitle": "Fundamentals of Logic Design", "credits": 4, "prereqs": [] },
+                    { "id": "phys7c", "title": "PHYS 7C", "subtitle": "E/M waves and Optics", "credits": 4, "prereqs": ["phys7b"] },
+                    { "id": "pstat120a", "title": "PSTAT 120A", "subtitle": "Probability & Statistics", "credits": 4, "prereqs": ["math6a"] },
+                    { "id": "writw6r", "title": "WRIT W 6R", "subtitle": "Rome: The Game", "credits": 5, "prereqs": [] }
+                ]
+            },
             { "quarterName": "Winter", "courses": [] },
             { "quarterName": "Spring", "courses": [] }
         ]

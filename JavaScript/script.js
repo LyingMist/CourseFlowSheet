@@ -26,20 +26,29 @@ function generateFlowsheetHTML(yearsData) {
         // Loop through each quarter in that year
         year.quarters.forEach(quarter => {
             let coursesHTML = '';
+            const totalCredits = quarter.courses.reduce(
+                (total, course) => total + (Number(course.credits) || 0),
+                0
+            );
             
             // Loop through each course in that quarter
             quarter.courses.forEach(course => {
+                const concurrentCourses = course.concurrent || [];
                 coursesHTML += `
-                    <div class="course" id="${course.id}" data-prereqs="${course.prereqs.join(' ')}">
+                    <div class="course" id="${course.id}" tabindex="0" data-prereqs="${course.prereqs.join(' ')}" data-concurrent="${concurrentCourses.join(' ')}">
                         <strong>${course.title}</strong>
                         <small>${course.subtitle}</small>
+                        <span class="course-credits">${formatCredits(course.credits)}</span>
                     </div>
                 `;
             });
 
             quartersHTML += `
-                <div class="quarter-column">
-                    <h3>${quarter.quarterName}</h3>
+                <div class="quarter-column" tabindex="0" aria-label="${year.yearName} ${quarter.quarterName}: ${formatCredits(totalCredits)} total">
+                    <h3>
+                        <span>${quarter.quarterName}</span>
+                        <span class="quarter-credits">(${totalCredits})</span>
+                    </h3>
                     ${coursesHTML}
                 </div>
             `;
@@ -56,6 +65,11 @@ function generateFlowsheetHTML(yearsData) {
     });
 
     rootContainer.innerHTML = allHTML;
+}
+
+function formatCredits(credits) {
+    const value = Number(credits) || 0;
+    return `${value} ${value === 1 ? 'unit' : 'units'}`;
 }
 
 
@@ -83,6 +97,14 @@ function initializeHighlighter() {
 
         // Add mouse leave event
         course.addEventListener('mouseleave', () => {
+            removeHighlights();
+        });
+
+        course.addEventListener('focus', () => {
+            highlightCourses(course);
+        });
+
+        course.addEventListener('blur', () => {
             removeHighlights();
         });
     });
@@ -145,6 +167,16 @@ function initializeHighlighter() {
                 unlockEl.classList.add('unlocks-active');
             }
         });
+
+        // 8. Highlight courses that must be taken concurrently
+        const concurrentIds = hoveredCourse.dataset.concurrent.split(' ').filter(Boolean);
+        concurrentIds.forEach(id => {
+            const concurrentEl = allCoursesMap.get(id);
+            if (concurrentEl) {
+                concurrentEl.classList.remove('dimmed');
+                concurrentEl.classList.add('concurrent-active');
+            }
+        });
     }
 
     function removeHighlights() {
@@ -154,7 +186,8 @@ function initializeHighlighter() {
                 'hover-active', 
                 'prereq-active', 
                 'prereq-secondary-active', 
-                'unlocks-active'
+                'unlocks-active',
+                'concurrent-active'
             );
         });
     }
