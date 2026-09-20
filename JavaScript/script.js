@@ -14,7 +14,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 });
 
-
 function generateFlowsheetHTML(yearsData) {
     const rootContainer = document.getElementById('flowsheet-root');
     let allHTML = '';

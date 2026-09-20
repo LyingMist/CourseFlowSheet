@@ -5,13 +5,172 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Course Engineer</title>
     <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/info.css">
 </head>
 <body>
 
-    <h1>Computer Engineer Course Flowsheet</h1>
+    <header class="page-header">
+        <h1>Computer Engineer Course Flowsheet</h1>
+        <button
+            class="info-button"
+            id="info-button"
+            type="button"
+            aria-haspopup="dialog"
+            aria-controls="info-modal"
+            aria-expanded="false"
+        >
+            <span class="info-button-icon" aria-hidden="true">i</span>
+            <span>Info</span>
+        </button>
+    </header>
+
     <div class="flowsheet-container" id="flowsheet-root">
         <p>Loading courses...</p>
     </div>
-     <script src="JavaScript/script.js"></script>
+
+    <div class="info-overlay" id="info-modal" hidden>
+        <section
+            class="info-dialog"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="info-dialog-title"
+            tabindex="-1"
+        >
+            <header class="info-dialog-header">
+                <div>
+                    <p class="info-eyebrow">Flowsheet guide</p>
+                    <h2 id="info-dialog-title">Info Page</h2>
+                </div>
+                <button class="info-close-button" id="info-close-button" type="button" aria-label="Close information window">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </header>
+
+            <div class="info-dialog-layout">
+                <nav class="info-topic-nav" role="tablist" aria-label="Information topics" aria-orientation="vertical">
+                    <button
+                        class="info-topic-button active"
+                        id="info-tab-intro"
+                        type="button"
+                        role="tab"
+                        aria-selected="true"
+                        aria-controls="info-panel-intro"
+                        data-info-topic="intro"
+                    >
+                        Introduction
+                    </button>
+                    <button
+                        class="info-topic-button"
+                        id="info-tab-colors"
+                        type="button"
+                        role="tab"
+                        aria-selected="false"
+                        aria-controls="info-panel-colors"
+                        data-info-topic="colors"
+                        tabindex="-1"
+                    >
+                        Color Indicators
+                    </button>
+                    <button
+                        class="info-topic-button"
+                        id="info-tab-units"
+                        type="button"
+                        role="tab"
+                        aria-selected="false"
+                        aria-controls="info-panel-units"
+                        data-info-topic="units"
+                        tabindex="-1"
+                    >
+                        Units
+                    </button>
+                </nav>
+
+                <div class="info-topic-content">
+                    <article
+                        class="info-topic-panel"
+                        id="info-panel-intro"
+                        role="tabpanel"
+                        aria-labelledby="info-tab-intro"
+                        data-info-panel="intro"
+                    >
+                        <h3>Introduction</h3>
+                        <p>
+                            This flowsheet organizes courses by academic year and quarter. It is designed to make
+                            prerequisite paths, concurrent courses, and future course options easier to understand.
+                        </p>
+                    </article>
+
+                    <article
+                        class="info-topic-panel"
+                        id="info-panel-colors"
+                        role="tabpanel"
+                        aria-labelledby="info-tab-colors"
+                        data-info-panel="colors"
+                        hidden
+                    >
+                        <h3>Color Indicators</h3>
+                        <div class="indicator-list">
+                            <div class="indicator-item">
+                                <span class="indicator-swatch indicator-current" aria-hidden="true"></span>
+                                <div>
+                                    <strong>Current course</strong>
+                                    <p>Gold marks the course currently being explored.</p>
+                                </div>
+                            </div>
+                            <div class="indicator-item">
+                                <span class="indicator-swatch indicator-prerequisite" aria-hidden="true">&larr;</span>
+                                <div>
+                                    <strong>Direct prerequisite</strong>
+                                    <p>Light blue and a left arrow identify a first-level prerequisite.</p>
+                                </div>
+                            </div>
+                            <div class="indicator-item">
+                                <span class="indicator-swatch indicator-secondary" aria-hidden="true">&laquo;</span>
+                                <div>
+                                    <strong>Earlier prerequisite</strong>
+                                    <p>The palest blue marks a second-level prerequisite in the course chain.</p>
+                                </div>
+                            </div>
+                            <div class="indicator-item">
+                                <span class="indicator-swatch indicator-unlocked" aria-hidden="true">&rarr;</span>
+                                <div>
+                                    <strong>Unlocked course</strong>
+                                    <p>Dark blue shows a course directly unlocked by the selected course.</p>
+                                </div>
+                            </div>
+                            <div class="indicator-item">
+                                <span class="indicator-swatch indicator-concurrent" aria-hidden="true">&harr;</span>
+                                <div>
+                                    <strong>Concurrent course</strong>
+                                    <p>Teal identifies a paired course that must be taken at the same time.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article
+                        class="info-topic-panel"
+                        id="info-panel-units"
+                        role="tabpanel"
+                        aria-labelledby="info-tab-units"
+                        data-info-panel="units"
+                        hidden
+                    >
+                        <h3>What Units Mean</h3>
+                        <p>
+                            Generally, the value assigned to a course is determined at the rate of 1 unit for every 3 hours of student work required each week during a 10-week term.
+                        </p>
+                        <p>
+                            Each course shows its own units when hovered or focused. The number in brackets beside a
+                            quarter name is the sum of all course units scheduled for that quarter.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="JavaScript/info.js"></script>
+    <script src="JavaScript/script.js"></script>
 </body>
 </html>

@@ -8,6 +8,10 @@ After scanning through the UCSB gears and other schools' major flow charts. I fi
 
 ## Version History: 
 
+
+#### Ver. 1.2.0 (2026-09-19)
+Added info panel for guild how to read the course workflow sheet. 
+
 #### Ver. 1.1.0 (2026-09-19)
 Updated the sophomore fall quarter schedule, added hoverable credit totals, and added concurrent-course relationships.
 
