@@ -14,7 +14,7 @@
             { 
                 "quarterName": "Winter", 
                 "courses": [
-                    { "id": "math6a", "title": "MATH 6A", "subtitle": "Vector Calculus", "credits": 4, "prereqs": ["math4a"] },
+                    { "id": "math6a", "title": "MATH 6A", "subtitle": "Vector Calculus I", "credits": 4, "prereqs": ["math4a"] },
                     { "id": "cs24", "title": "CMPSC 24", "subtitle": "Object-Oriented Programming", "credits": 4, "prereqs": ["cs16"] },
                     { "id": "ece5", "title": "ECE 5", "subtitle": "Intro to ECE", "credits": 4, "prereqs": [] },
                     { "id": "ece1a", "title": "ECE 1A", "subtitle": "Computer Engineer Seminar", "credits": 1, "prereqs": [] },
@@ -47,7 +47,15 @@
                     { "id": "writw6r", "title": "WRIT W 6R", "subtitle": "Rome: The Game", "credits": 5, "prereqs": [] }
                 ]
             },
-            { "quarterName": "Winter", "courses": [] },
+            {   "quarterName": "Fall",
+                "courses": [
+                    { "id": "ece10b", "title": "ECE 10B", "subtitle": "Small Signal Analysis with MOSFETs", "credits": 3, "prereqs": ["ece10a"], "concurrent": ["ece10bl"] },
+                    { "id": "ece10bl", "title": "ECE 10BL", "subtitle": "Digital Circuits Lab", "credits": 2, "prereqs": [], "concurrent": ["ece10b"] },
+                    { "id": "phys7d", "title": "PHYS 7D", "subtitle": "Thermodynamics & quantum mechanics", "credits": 3, "prereqs": ["phys7c"] },
+                    { "id": "phys7l", "title": "PHYS 7L", "subtitle": "Physics Laboratory", "credits": 1, "prereqs": ["phys7c"] },
+                    { "id": "math6b", "title": "MATH 6B", "subtitle": "Vector Calculus II", "credits": 4, "prereqs": ["math6a"] }
+                ]
+            },
             { "quarterName": "Spring", "courses": [] }
         ]
     },
