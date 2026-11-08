@@ -47,7 +47,7 @@
                     { "id": "writw6r", "title": "WRIT W 6R", "subtitle": "Rome: The Game", "credits": 5, "prereqs": [] }
                 ]
             },
-            {   "quarterName": "Fall",
+            {   "quarterName": "Winter",
                 "courses": [
                     { "id": "ece10b", "title": "ECE 10B", "subtitle": "Small Signal Analysis with MOSFETs", "credits": 3, "prereqs": ["ece10a"], "concurrent": ["ece10bl"] },
                     { "id": "ece10bl", "title": "ECE 10BL", "subtitle": "Digital Circuits Lab", "credits": 2, "prereqs": [], "concurrent": ["ece10b"] },
